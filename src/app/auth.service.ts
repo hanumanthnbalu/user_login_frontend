@@ -8,7 +8,6 @@ import { AuthData } from './auth-data.model';
 export class AuthService {
 	username: string;
 	constructor(private http: HttpClient) {}
-
 	createUser(username: string, email: string, password: string) {
 		const authData: AuthData = {
 			username: username,
