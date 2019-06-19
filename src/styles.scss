@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // /* You can add global styles to this file, and also import other style files */
 
 // body {
@@ -7,6 +8,9 @@
 //   color: white;
 // }
 
+=======
+/* You can add global styles to this file, and also import other style files */
+>>>>>>> dad8b77ea6d8072ac1ceb693cb6510b5bb90c274
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -47,8 +51,13 @@ a{
   text-decoration: none;
 }
 a.active {
+<<<<<<< HEAD
   background-color: #fff;
   color: #ff4081
+=======
+  color: green;
+  background-color: white
+>>>>>>> dad8b77ea6d8072ac1ceb693cb6510b5bb90c274
 }
 mat-spinner {
   margin: auto;
