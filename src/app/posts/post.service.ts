@@ -18,11 +18,15 @@ export class PostService {
 		postData.append('title', title);
 		postData.append('content', content);
 		postData.append('image', image, title);
-		this.http.post('http://localhost:3000/api/posts/post', postData).subscribe((responsePost) => {
+    this.http.post('http://localhost:3000/api/posts/post', postData)
+    .subscribe((responsePost) => {
 			console.log(responsePost);
 			this.postsUpdated.next([ ...this.posts ]);
 			this.router.navigate([ '/' ]);
 		});
+  }
+  	getPostUpdatedListner() {
+		return this.postsUpdated.asObservable();
 	}
 
 	getPosts(postPerPage:number, currentPage:number) {
@@ -31,7 +35,6 @@ export class PostService {
 			.get<{ message: string; post: any, count:number }>('http://localhost:3000/api/posts'+ queryParams)
 			.pipe(
 				map((postData) => {
-          // console.log('transferData', postData.count);
 					return { posts: postData.post.map((post) => {
 						return {
 							title: post.title,
@@ -50,7 +53,6 @@ export class PostService {
 			});
 	}
 	getPost(id: string) {
-		// return { ...this.posts.find((post) => post.id === id) };
 		return this.http.get<{ _id: string; title: string; content: string; imagePath: string }>(
 			'http://localhost:3000/api/posts/post/' + id
 		);
@@ -79,16 +81,11 @@ export class PostService {
 		});
 	}
 
-	getPostUpdatedListner() {
-		return this.postsUpdated.asObservable();
-	}
-
 	deletePost(postId: string) {
-		this.http.delete('http://localhost:3000/api/posts/post/' + postId).subscribe(() => {
-			console.log('Deleted!', postId);
-			this.postsUpdated.next([ ...this.posts ]);
-			// this.getPosts();
-			this.router.navigate([ '/' ]);
-		});
+    return this.http.delete('http://localhost:3000/api/posts/post/' + postId);
+    // .subscribe(() => {
+		// 	console.log('Deleted!', postId);
+		// 	this.postsUpdated.next([ ...this.posts ]);
+		// });
 	}
 }
