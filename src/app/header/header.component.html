@@ -1,0 +1,111 @@
+
+  <mat-toolbar color="accent">
+    <span><a routerLink="/">USER</a></span>
+    <span class="spacer"></span>
+     <span *ngIf="username" style="margin-right: 10px;font-size: 1rem;">Hi, {{username}}</span>
+    <ul>
+      <li *ngIf="!userIsAuthenticated"><a mat-button  routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li *ngIf="!userIsAuthenticated"><a mat-button  routerLink="/signup" routerLinkActive="active">Signup</a></li>
+    </ul>
+    <ul *ngIf="userIsAuthenticated">
+      <li><a mat-button  routerLink="/postslists" routerLinkActive="active">Posts</a></li>
+      <li><a mat-button  routerLink="/postscreate" routerLinkActive="active">New Posts</a></li>
+      <li><a mat-button (click)="onLogout()">Logout</a>  </li>
+    </ul>
+  </mat-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<mat-drawer-container class="sidebar-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+ <div class="categories">
+   <div class="logo">
+     <img src="../../assets/1.jpg" class="logo_img" alt="No image available ">
+   </div>
+  <div class="categories-top">
+    <ul class="nav_list">
+      <a routerLink="/" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">home</mat-icon>Home</li></a>
+      <a routerLink="/videos" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">ondemand_video</mat-icon>Videos</li></a>
+      <a routerLink="/categories" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">category</mat-icon>Categories</li></a>
+      <a routerLink="/games" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">videogame_asset</mat-icon>Games</li></a>
+      <a routerLink="/recently-added" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">bookmark_border</mat-icon>Recently Added</li></a>
+    </ul>
+   </div>
+   <div class="categories-bottom">
+    <ul class="nav_list">
+      <a routerLink="/login" routerLinkActive="active"> <li class="nav_list_items"> <mat-icon class="nav_icon">check_circle_outline</mat-icon>Signin</li></a>
+      <a routerLink="/myplans" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">account_circle</mat-icon>My plans</li></a>
+      <a routerLink="/settings" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">settings_applications</mat-icon>Settings</li></a>
+    </ul>
+   </div>
+ </div>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <div (click)="toggle()">
+    <button type="button" mat-button (click)="drawer.toggle()">
+        <mat-icon *ngIf="!showFiller">menu</mat-icon>
+      <mat-icon *ngIf="showFiller">close</mat-icon>
+    </button>
+  </div>
+  </div>
+
+</mat-drawer-container>
+
+<!-- DESKTOP  CATEGORIES -->
+<!--
+  <div class="desktop_sidenav">
+        <div class="desktop_categories">
+            <div class="logo">
+              <span class="logo">MAJA</span>
+            </div>
+            <div class="desktop_categories-top">
+                  <ul class="nav_list">
+                    <a routerLink="/" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">home</mat-icon>Home</li></a>
+                    <a routerLink="/videos" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">ondemand_video</mat-icon>Videos</li></a>
+                    <a routerLink="/categories" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">category</mat-icon>Categories</li></a>
+                    <a routerLink="/games" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">videogame_asset</mat-icon>Games</li></a>
+                    <a routerLink="/recently-added" routerLinkActive="active"><li class="nav_list_items"> <mat-icon class="nav_icon">bookmark_border</mat-icon>Recently Added</li></a>
+                  </ul>
+              </div>
+              <div class="desktop_categories-bottom">
+                  <div *ngIf="isLoggedin">
+                      <div class="login"><a routerLink="/login" routerLinkActive="active"> <li class="nav_list_items"> <mat-icon class="nav_icon">check_circle_outline</mat-icon>login</li></a></div>
+                     <div class="login"><a routerLink="/signup" routerLinkActive="active"> <li class="nav_list_items"> <mat-icon class="nav_icon">how_to_reg</mat-icon>Signup</li></a></div>
+                  </div>
+                  <div *ngIf="!isLoggedin" class="mat-menu-content-list">
+                      <button mat-icon-button [matMenuTriggerFor]="menu">
+                          <mat-icon class="nav_icon">account_box</mat-icon> <span>Profile</span>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                          <button mat-menu-item >
+                            <mat-icon>receipt</mat-icon>
+                            <a routerLink="/myplans" routerLinkActive="active"><span class="text_color">My plans</span>
+                            </a>
+                          </button>
+                          <button mat-menu-item >
+                            <mat-icon>settings_applications</mat-icon>
+                            <a routerLink="/settings" routerLinkActive="active"><span class="text_color">Settings</span></a>
+                          </button>
+                          <button mat-menu-item>
+                            <mat-icon>eject</mat-icon>
+                            <a routerLink="/logout" routerLinkActive="active"><span class="text_color">Logout</span></a>
+                          </button>
+                        </mat-menu>
+                  </div>
+            </div>
+        </div>
+  </div> -->
+

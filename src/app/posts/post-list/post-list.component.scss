@@ -1,0 +1,11 @@
+.img_preview {
+	height: 10rem;
+}
+.img_preview img {
+	height: 100%;
+	width: 100%;
+	object-fit: scale-down;
+}
+mat-paginator {
+	margin-top: 1rem;
+}
