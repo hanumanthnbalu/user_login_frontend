@@ -20,7 +20,6 @@ export class PostService {
 		postData.append('image', image, title);
     this.http.post('http://localhost:3000/api/posts/post', postData)
     .subscribe((responsePost) => {
-			console.log(responsePost);
 			this.postsUpdated.next([ ...this.posts ]);
 			this.router.navigate([ '/' ]);
 		});
@@ -75,7 +74,6 @@ export class PostService {
 			};
 		}
 		this.http.put('http://localhost:3000/api/posts/post/' + id, postData).subscribe((updatedPost) => {
-			console.log(updatedPost);
 			this.postsUpdated.next([ ...this.posts ]);
 			this.router.navigate([ '/' ]);
 		});
@@ -83,9 +81,5 @@ export class PostService {
 
 	deletePost(postId: string) {
     return this.http.delete('http://localhost:3000/api/posts/post/' + postId);
-    // .subscribe(() => {
-		// 	console.log('Deleted!', postId);
-		// 	this.postsUpdated.next([ ...this.posts ]);
-		// });
 	}
 }
