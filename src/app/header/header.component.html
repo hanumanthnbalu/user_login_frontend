@@ -2,10 +2,10 @@
   <mat-toolbar color="accent">
     <span><a routerLink="/">USER</a></span>
     <span class="spacer"></span>
-     <span *ngIf="username" style="margin-right: 10px;font-size: 1rem;">Hi, {{username}}</span>
+    <!-- <span *ngIf="username" style="margin-right: 10px;font-size: 1rem;">Hi, {{username}}</span> -->
     <ul>
-      <li *ngIf="!userIsAuthenticated"><a mat-button  routerLink="/login" routerLinkActive="active">Login</a></li>
-      <li *ngIf="!userIsAuthenticated"><a mat-button  routerLink="/signup" routerLinkActive="active">Signup</a></li>
+      <li *ngIf="!userIsAuthenticated"><a mat-button  routerLink="/auth/login" routerLinkActive="active">Login</a></li>
+      <li *ngIf="!userIsAuthenticated"><a mat-button  routerLink="/auth/signup" routerLinkActive="active">Signup</a></li>
     </ul>
     <ul *ngIf="userIsAuthenticated">
       <li><a mat-button  routerLink="/postslists" routerLinkActive="active">Posts</a></li>

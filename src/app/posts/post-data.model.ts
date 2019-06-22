@@ -1,7 +1,8 @@
 export interface PostData {
-	id?: string;
+	_id?: string;
 	title: string;
   content: string;
   imagePath: string;
-	createdAt?: any;
+  createdAt?: any;
+  creator: any;
 }

@@ -1,5 +1,6 @@
 .img_preview {
-	height: 10rem;
+  height: 10rem;
+  margin-bottom: 10px;
 }
 .img_preview img {
 	height: 100%;
@@ -8,4 +9,10 @@
 }
 mat-paginator {
 	margin-top: 1rem;
+}
+.posts_list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
 }
